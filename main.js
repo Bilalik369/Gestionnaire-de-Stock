@@ -70,9 +70,33 @@ class Inventory {
       console.log("Produit non trouvé.");
     }
   }
+}
 
+function showMenu(){
+  const readline = require('readline');
+  const rl = readline.createInterface({
+    input : process.stdin,
+    output : process.stdout
+  });
 
+  function askQuestion(query){
+    return new Promise(resolve => rl.question(query, resolve));
 
+  }
 
+  async function mainMenu(){
+    let exist = false;
+    while(!exist){
+     
+      console.log("\n--- Menu ---");
+      console.log("1. Ajouter un produit");
+      console.log("2. Afficher tous les produits");
+      console.log("3. Mettre à jour un produit");
+      console.log("4. Supprimer un produit");
+      console.log("5. Quitter");
 
+      
+
+    }
+  }
 }

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "AMLOOO",
+    "description": "un pack de 5L avec un chantiage de zit argan ",
+    "quantity": 15,
+    "price": 499
+  },
+  {
+    "id": 2,
+    "name": "CHAMPOO",
+    "description": "un pack de 4 boite de 33CL",
+    "quantity": 70,
+    "price": 45
+  }
+]

@@ -1,17 +1,17 @@
 
 
 class Product {
-    constructor(id, name, description, quantite, prix) {
+    constructor(id, name, description, quantity, price) {
       this.id = id;
       this.name = name;
       this.description = description;
-      this.quantite = quantite;
-      this.prix = prix;
+      this.quantity = quantity;
+      this.price = price;
     }
   
     
-    getTotalPrix() {
-      return this.quantite * this.prix;
+    getTotalPrice() {
+      return this.quantity * this.price;
     }
   }
   

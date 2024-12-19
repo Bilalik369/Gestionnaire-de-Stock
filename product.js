@@ -10,7 +10,7 @@ class Product {
     }
   
     
-    getTotalPrice() {
+    getTotalPrix() {
       return this.quantite * this.prix;
     }
   }

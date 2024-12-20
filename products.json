@@ -19,5 +19,12 @@
     "description": "un stock de 100 livre de programation",
     "quantity": 3,
     "price": 1999
+  },
+  {
+    "id": 4,
+    "name": "cofee",
+    "description": " sache de 1KG ",
+    "quantity": 100,
+    "price": 80
   }
 ]

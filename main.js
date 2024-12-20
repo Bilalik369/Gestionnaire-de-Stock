@@ -20,7 +20,7 @@ class Inventory {
 
   
   saveProducts() {
-    fs.writeFileSync(productsFilePath, JSON.stringify(this.products, null, 2)); // حفظ البيانات في ملف JSON
+    fs.writeFileSync(productsFilePath, JSON.stringify(this.products, null, 2)); 
   }
 
   
@@ -86,7 +86,7 @@ function showMenu() {
   async function mainMenu() {
     let exist = false;
     while (!exist) {
-      console.log("\n--- Menu ---");
+      console.log("\n--- Menu ---");  
       console.log("1. Ajouter un produit");
       console.log("2. Afficher tous les produits");
       console.log("3. Mettre à jour un produit");

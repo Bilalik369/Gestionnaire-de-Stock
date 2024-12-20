@@ -1,4 +1,4 @@
-const fs = require('fs'); 
+const fs = require('fs');
 const path = require('path');
 const Product = require('./product');  
 
@@ -9,18 +9,21 @@ class Inventory {
     this.products = this.loadProducts(); 
   }
 
+  
   loadProducts() {
     if (fs.existsSync(productsFilePath)) {
-      const data = fs.readFileSync(productsFilePath);
-      return JSON.parse(data);
+      const data = fs.readFileSync(productsFilePath, 'utf8');
+      return JSON.parse(data); 
     }
     return [];
   }
 
+  
   saveProducts() {
-    fs.writeFileSync(productsFilePath, JSON.stringify(this.products, null, 2));
+    fs.writeFileSync(productsFilePath, JSON.stringify(this.products, null, 2)); // حفظ البيانات في ملف JSON
   }
 
+  
   addProduct(name, description, quantity, price) {
     const id = this.products.length + 1;
     const newProduct = new Product(id, name, description, quantity, price);
@@ -38,11 +41,12 @@ class Inventory {
     let totalStockValue = 0;
     this.products.forEach(product => {
       console.log(`ID: ${product.id}, Nom: ${product.name}, Description: ${product.description}, Quantité: ${product.quantity}, Prix Unitaire: ${product.price}DH`);
-      totalStockValue += product.getTotalPrice();
+      totalStockValue += product.quantity * product.price;  
     });
     console.log(`Valeur totale du stock: ${totalStockValue}DH`);
   }
 
+  
   updateProduct(id, quantity, price) {
     const product = this.products.find(p => p.id === id);
     if (product) {
@@ -55,6 +59,7 @@ class Inventory {
     }
   }
 
+  
   deleteProduct(id) {
     const productIndex = this.products.findIndex(p => p.id === id);
     if (productIndex !== -1) {
@@ -96,7 +101,6 @@ function showMenu() {
           const description = await askQuestion("Description du produit: ");
           const quantity = parseInt(await askQuestion("Quantité: "));
           const price = parseFloat(await askQuestion("Prix unitaire: "));
-
           inventory.addProduct(name, description, quantity, price);
           break;
 
@@ -122,11 +126,10 @@ function showMenu() {
           break;
       }
     }
-    rl.close(); 
+    rl.close();
   }
-
   mainMenu();
 }
 
 const inventory = new Inventory();
-showMenu(inventory);
+showMenu();

@@ -12,5 +12,12 @@
     "description": "un pack de 4 boite de 33CL",
     "quantity": 70,
     "price": 45
+  },
+  {
+    "id": 3,
+    "name": "Les livre ",
+    "description": "un stock de 100 livre de programation",
+    "quantity": 3,
+    "price": 1999
   }
 ]
